@@ -14,8 +14,7 @@ pigWord str =
     (c:str') = reverse str
     strBuilder blah =
       let
-        foo = takeWhile isConsonant blah
-        (c:fooRest) = dropWhile isConsonant blah
+        (foo, c:fooRest) = span isConsonant blah
         bar = 
           if isUpper (head blah)
             then toUpper c : fooRest
